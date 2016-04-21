@@ -1,6 +1,8 @@
 package com.ericzumba;
 
 import static java.lang.String.format;
+import static java.util.Arrays.asList;
+import static java.util.stream.Collectors.joining;
 
 public class J {
 
@@ -22,8 +24,8 @@ public class J {
 		this.s = format("{\"%s\": %.2f}", k, v);
 	}
 	
-	public J(String k, J v) {
-		this.s = format("{\"%s\": %s}", k, v);
+	public J(String k, J... v) {
+		this.s = format("{\"%s\": %s}", k, asList(v).stream().map((j) -> j.s).collect(joining(", ")));
 	}
 
 	public static J o(String k, String v) {
@@ -42,7 +44,7 @@ public class J {
 		return new J(k, v);
 	}
 	
-	public static J o(String k, J v) {
+	public static J o(String k, J... v) {
 		return new J(k, v);
 	}
 	

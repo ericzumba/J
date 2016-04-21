@@ -31,4 +31,10 @@ public class JTest {
 	public void nested_object() throws Exception {
 		assertEquals("{\"a\": {\"b\": \"c\"}}", o("a", o("b", "c")).s);
 	}
+	
+	@Test
+	public void multiple_object() throws Exception {
+		assertEquals("{\"a\": {\"b\": \"c\", \"d\": \"d\" }}", J.o("a", o("b", "c"), o("d", "e")).s);
+	}
+	
 }
