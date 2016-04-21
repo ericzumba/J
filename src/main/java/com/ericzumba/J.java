@@ -60,4 +60,8 @@ public class J {
 	public String toString() {
 		return format("{%s}", s);
 	}
+	
+	public String j() {
+		return toString();
+	}
 }
