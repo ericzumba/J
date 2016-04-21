@@ -8,4 +8,8 @@ public class J {
 		return format("{\"%s\": \"%s\"}", k, v);
 	}
 
+	public static String o(String k, long v) {
+		return format("{\"%s\": %d}", k, v);
+	}
+
 }
