@@ -26,20 +26,20 @@ public class J {
 		this.s = format("\"%s\": %s", k, asValue(v));
 	}
 	
-	public J(String k, J v) {
+	private J(String k, J v) {
 		this.s = format("\"%s\": %s", k, asValue(v));
 	}
 	
-	public J(String k, J... v) {
+	private J(String k, J... v) {
 		this.s = format("\"%s\": %s", k, asValue(v));
 	}
 	
-	public J(String k, Collection<? extends Object> v) {
+	private J(String k, Collection<? extends Object> v) {
 		this.s = format("\"%s\": %s", k, asValue(v));
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public static String asValue(Object v) {
+	private static String asValue(Object v) {
 		if(v instanceof String)
 			return format("\"%s\"", v);
 		else if(v instanceof Long)

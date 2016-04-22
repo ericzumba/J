@@ -40,7 +40,7 @@ public class JTest {
 	
 	@Test
 	public void nested_array_object() throws Exception {
-		assertEquals("{\"a\": [{\"b\": \"c\"}]}", o("a", asList(o("b", "c"))).j());
+		assertEquals("{\"a\": [{\"b\": \"c\"}, {\"d\": \"e\"}]}", o("a", asList(o("b", "c"), o("d", "e"))).j());
 	}
 	
 	@Test
