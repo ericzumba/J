@@ -12,6 +12,9 @@ o("a",
 .j();
 ```
 
-stands for {"a": {"b": "c"}}
-
-Of course, with static importing J.o this could be shortened a little bit more
+stands for 
+```json
+{"a": 
+  {"b": "c"}
+}
+```
