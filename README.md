@@ -37,6 +37,7 @@ stands for
 
 ```java
 import static com.ericzumba.J.o;
+import static java.util.Arrays.asList;
 
 o("a", 
   asList("b", "c"))
