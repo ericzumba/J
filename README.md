@@ -36,3 +36,11 @@ stands for
   ["b", "c"]
 }
 ```
+### Supported value types are
+
+* string
+* integer 
+* boolean
+* float
+* nested object
+* single type list 
