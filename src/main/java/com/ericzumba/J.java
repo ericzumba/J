@@ -4,9 +4,7 @@ import static java.lang.String.format;
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.joining;
 
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 
 public class J {
 
