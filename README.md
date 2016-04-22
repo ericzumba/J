@@ -1,8 +1,21 @@
 ## J
 
-An easier way to write json strings inside java 8
+An easy way to write json strings inside java 8
 
 ## Code Example
+
+### Simple object 
+
+```java
+import static com.ericzumba.J.o;
+
+o("a", "b").j();
+```
+
+stands for 
+```json
+{"a": "b"} 
+```
 
 ### Nested object
 
