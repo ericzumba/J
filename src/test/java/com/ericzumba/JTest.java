@@ -1,7 +1,8 @@
 package com.ericzumba;
 
 import static com.ericzumba.J.o;
-import static org.junit.Assert.*;
+import static java.util.Arrays.asList;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -20,6 +21,11 @@ public class JTest {
 	@Test
 	public void boolean_object() throws Exception {
 		assertEquals("{\"a\": true}", o("a", true).j());
+	}
+	
+	@Test
+	public void array_object() throws Exception {
+		assertEquals("{\"a\": [\"b\"]}", o("a", asList("b")).j());
 	}
 	
 	@Test
