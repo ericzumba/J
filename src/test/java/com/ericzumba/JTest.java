@@ -34,6 +34,11 @@ public class JTest {
 	}
 	
 	@Test
+	public void nested_array_object() throws Exception {
+		assertEquals("{\"a\": [{\"b\": \"c\"}]}", o("a", asList(o("b", "c"))).j());
+	}
+	
+	@Test
 	public void float_object() throws Exception {
 		assertEquals("{\"a\": 1.23}", o("a", 1.23).j());
 	}
