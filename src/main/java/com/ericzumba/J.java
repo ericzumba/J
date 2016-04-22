@@ -63,7 +63,7 @@ public class J {
 	}
 	
 	public static String asValue(Collection<? extends String> v) {
-		return format("[%s]", v.stream().map((a) -> asValue(a)).collect(joining(", ")));
+		return format("[%s]", v.stream().map(J::asValue).collect(joining(", ")));
 	}
 
 	public static J o(String k, String v) {

@@ -24,8 +24,13 @@ public class JTest {
 	}
 	
 	@Test
-	public void array_object() throws Exception {
+	public void string_array_object() throws Exception {
 		assertEquals("{\"a\": [\"b\"]}", o("a", asList("b")).j());
+	}
+	
+	@Test
+	public void two_string_array_object() throws Exception {
+		assertEquals("{\"a\": [\"b\", \"c\"]}", o("a", asList("b", "c")).j());
 	}
 	
 	@Test
