@@ -4,6 +4,8 @@ import static com.ericzumba.J.o;
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 
+import java.math.BigDecimal;
+
 import org.junit.Test;
 
 public class JTest {
@@ -46,6 +48,11 @@ public class JTest {
 	@Test
 	public void float_object() throws Exception {
 		assertEquals("{\"a\": 1.23}", o("a", 1.23).j());
+	}
+	
+	@Test
+	public void big_decimal_object() throws Exception {
+		assertEquals("{\"a\": 1.23456}", o("a", new BigDecimal("1.23456")).j());
 	}
 	
 	@Test

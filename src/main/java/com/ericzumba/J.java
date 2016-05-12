@@ -26,6 +26,10 @@ public class J {
 		this.s = format("\"%s\": %s", k, asValue(v));
 	}
 	
+	private J(String k, Object v) {
+		this.s = format("\"%s\": %s", k, asValue(v));
+	}
+	
 	private J(String k, J v) {
 		this.s = format("\"%s\": %s", k, asValue(v));
 	}
@@ -60,7 +64,7 @@ public class J {
 		else if(v instanceof Collection)
 			return format("[%s]", ((Collection) v).stream().map(J::asValue).collect(joining(", ")));
 		else
-			throw new IllegalArgumentException(format("Illegal type value: %s", v));
+			return format("%s", v.toString());
 	}
 
 	public static J o(String k, String v) {
@@ -76,6 +80,10 @@ public class J {
 	}
 	
 	public static J o(String k, double v) {
+		return new J(k, v);
+	}
+	
+	public static J o(String k, Object v) {
 		return new J(k, v);
 	}
 	
