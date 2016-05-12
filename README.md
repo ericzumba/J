@@ -17,6 +17,19 @@ stands for
 {"a": "b"} 
 ```
 
+### Multiple key value pairs 
+
+```java
+import static com.ericzumba.J.o;
+
+o("a", "b").and(o("c", "d")).j();
+```
+
+stands for 
+```json
+{"a": "b", "c": "d"} 
+```
+
 ### Nested object
 
 ```java
