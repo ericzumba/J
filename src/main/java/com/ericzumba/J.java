@@ -34,6 +34,10 @@ public class J {
 		this.s = format("\"%s\": %s", k, asValue(v));
 	}
 	
+	private J(J... v) {
+		this.s = asValue(v);
+	}
+	
 	private J(String k, Collection<? extends Object> v) {
 		this.s = format("\"%s\": %s", k, asValue(v));
 	}
@@ -51,7 +55,7 @@ public class J {
 		else if(v instanceof J)
 			return format("{%s}", ((J) v).s);
 		else if(v instanceof J[]) {
-			return format("{%s}", asList((J[]) v).stream().map((j) -> j.s).collect(joining(", ")));
+			return format("%s", asList((J[]) v).stream().map((j) -> j.s).collect(joining(", ")));
 		}
 		else if(v instanceof Collection)
 			return format("[%s]", ((Collection) v).stream().map(J::asValue).collect(joining(", ")));
@@ -94,5 +98,9 @@ public class J {
 	
 	public String j() {
 		return toString();
+	}
+
+	public J and(J o) {
+		return new J(this, o);
 	}
 }

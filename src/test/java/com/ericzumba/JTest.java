@@ -54,8 +54,13 @@ public class JTest {
 	}
 	
 	@Test
-	public void multiple_object() throws Exception {
-		assertEquals("{\"a\": {\"b\": \"c\", \"d\": \"e\"}}", o("a", o("b", "c"), o("d", "e")).j());
+	public void multiple_key_value_pairs() throws Exception {
+		assertEquals("{\"a\": \"b\", \"c\": \"d\"}", o("a", "b").and(o("c", "d")).j());
+	}
+	
+	@Test
+	public void multiple_nested_objects() throws Exception {
+		assertEquals("{\"a\": {\"b\": \"c\", \"d\": \"e\"}}", o("a", o("b", "c").and(o("d", "e"))).j());
 	}
 	
 }
